@@ -723,13 +723,12 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
          (command-log-key :foreground "dark magenta"))))
 
   ;; Set window size
-  (setq resize-factor 0.55)
+  (setq resize-factor 0.45)
   (setq width-breakpoint 1440)
-  (setq pos-adjustment 0)
   (when window-system
     (let ((frame (selected-frame))
           (resized-height (/ (display-pixel-height) (frame-char-height)))
-          (resized-width (let ((resized-width (-  (/ (display-pixel-width) (frame-char-width)) pos-adjustment)))
+          (resized-width (let ((resized-width (-  (/ (display-pixel-width) (frame-char-width)) 4)))
                            (if (> (display-pixel-width) width-breakpoint)
                                (round (* resized-width resize-factor))
                              resized-width))))
@@ -737,7 +736,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
       (set-frame-width frame resized-width)
       (set-frame-position frame
                           (if (> (display-pixel-width) width-breakpoint)
-                              (+ (- (display-pixel-width) (round (* (display-pixel-width) resize-factor))) pos-adjustment)
+                              (+ (- (display-pixel-width) (round (* (display-pixel-width) resize-factor))) 4)
                             0) 0))
     )
 
