@@ -511,7 +511,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
@@ -721,24 +721,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
          (lsp-face-highlight-read :background nil :weight bold)
          (command-log-command :foreground "firebrick")
          (command-log-key :foreground "dark magenta"))))
-
-  ;; Set window size
-  (setq resize-factor 0.45)
-  (setq width-breakpoint 1440)
-  (when window-system
-    (let ((frame (selected-frame))
-          (resized-height (/ (display-pixel-height) (frame-char-height)))
-          (resized-width (let ((resized-width (-  (/ (display-pixel-width) (frame-char-width)) 4)))
-                           (if (> (display-pixel-width) width-breakpoint)
-                               (round (* resized-width resize-factor))
-                             resized-width))))
-      (set-frame-height frame resized-height)
-      (set-frame-width frame resized-width)
-      (set-frame-position frame
-                          (if (> (display-pixel-width) width-breakpoint)
-                              (+ (- (display-pixel-width) (round (* (display-pixel-width) resize-factor))) 4)
-                            0) 0))
-    )
 
   )  ;; End of dotspacemacs/user-int
 
