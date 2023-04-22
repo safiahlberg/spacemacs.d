@@ -97,7 +97,10 @@ This function should only modify configuration layer settings."
           git-magit-status-fullscreen t
           magit-diff-refine-hunk t
           git-enable-magit-todos-plugin t
-          git-enable-magit-delta-plugin t)
+
+          ;; Install https://github.com/dandavison/delta for language syntax highlights in diff
+          ;; git-enable-magit-delta-plugin t
+          )
 
      ;; graphviz - open-source graph declaration system
      ;; Used to generated graphs of Clojure project dependencies
@@ -230,7 +233,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(clojure-essential-ref)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
