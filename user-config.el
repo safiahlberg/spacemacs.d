@@ -23,7 +23,7 @@
 (setq pos-adjustment 0)
 (when window-system
   (let ((frame (selected-frame))
-        (resized-height (- (/ (display-pixel-height) (frame-char-height)) 2))
+        (resized-height (- (/ (display-pixel-height) (frame-char-height)) 3))
         (resized-width (let ((resized-width (-  (/ (display-pixel-width) (frame-char-width)) pos-adjustment)))
                          (if (> (display-pixel-width) width-breakpoint)
                              (round (* resized-width resize-factor))
