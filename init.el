@@ -134,6 +134,8 @@ This function should only modify configuration layer settings."
 
      markdown
 
+     asciidoc
+
      ;; Editing multiple lines of text concurrently
      ;; `g r' menu in Emacs normal state
      multiple-cursors
