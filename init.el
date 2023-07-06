@@ -145,6 +145,8 @@ This function should only modify configuration layer settings."
           org-enable-github-support t
           org-enable-bootstrap-support t
           ;; org-enable-reveal-js-support t
+          org-enable-roam-support t
+          org-roam-directory "~/Documents/org-roam"
           org-want-todo-bindings t
           org-enable-org-journal-support t
           org-journal-dir "~/projects/journal/"
