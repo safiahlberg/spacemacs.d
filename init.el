@@ -147,6 +147,13 @@ This function should only modify configuration layer settings."
           ;; org-enable-reveal-js-support t
           org-enable-roam-support t
           org-roam-directory "~/Documents/org-roam"
+          org-roam-dailies-directory "daily/"
+          org-roam-dailies-capture-templates
+          '(("d" "default" entry
+             "* %?"
+             :target (file+head "%<%Y-%m-%d>.org"
+                                "#+title: %<%Y-%m-%d>\n")))
+          org-roam-db-autosync-enable t
           org-want-todo-bindings t
           org-enable-org-journal-support t
           org-journal-dir "~/projects/journal/"
