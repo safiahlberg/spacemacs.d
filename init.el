@@ -164,6 +164,9 @@ This function should only modify configuration layer settings."
           org-journal-time-format ""
           org-journal-carryover-items "TODO=\"TODO\"|TODO=\"DOING\"|TODO=\"BLOCKED\"|TODO=\"REVIEW\"")
 
+     ;; Spacemacs Project Layer - projectile
+     (spacemacs-project :variables
+              projectile-create-missing-test-files t)
 
      ;; Text-based file manager with preview - SPC a t r r
      (ranger :variables
