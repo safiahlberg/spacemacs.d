@@ -121,10 +121,10 @@ This function should only modify configuration layer settings."
      (lsp :variables
           lsp-headerline-breadcrumb-enable t              ; Breadcrumb trail
           lsp-headerline-breadcrumb-segments '(symbols)   ; namespace & symbols, no file path
-          lsp-ui-peek-enable t                            ; popups for refs, errors, symbols, etc.
+          lsp-ui-peek-enable nil                          ; popups for refs, errors, symbols, etc.
           lsp-semantic-tokens-enable t                    ; enhance syntax highlight
           lsp-treemacs-error-list-current-project-only t  ; limit errors to current project
-          lsp-idle-delay 0.2                              ; smooth LSP features response
+          lsp-idle-delay 1.5                              ; smooth LSP features response
           lsp-eldoc-enable-hover nil                      ; disable all hover actions
           lsp-ui-doc-enable nil                           ; doc hover popups
           lsp-ui-sideline-enable nil                      ; sidebar code actions visual indicator
@@ -210,8 +210,8 @@ This function should only modify configuration layer settings."
      spell-checking
 
      ;; Use original flycheck fringe bitmaps
-     (syntax-checking :variables
-                      syntax-checking-use-original-bitmaps t)
+     ;; (syntax-checking :variables
+     ;;                  syntax-checking-use-original-bitmaps t)
 
      ;; Visual file manager - `SPC p t'
      ;; treemacs-no-png-images t removes file and directory icons
@@ -247,7 +247,12 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(clojure-essential-ref)
+   dotspacemacs-additional-packages '(clojure-essential-ref
+                                      (evil-surround
+                                       :location
+                                       (recipe :fetcher github
+                                               :repo "emacs-evil/evil-surround"
+                                               :commit "f273821f575ace519066fb106ee45a5b8577475f")))
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
