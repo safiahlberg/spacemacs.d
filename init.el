@@ -45,12 +45,13 @@ This function should only modify configuration layer settings."
      ;; Show snippets in the auto-completion popup
      ;; Show suggestions by most commonly used
      (auto-completion :variables
-                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-help-tooltip 'manual
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-idle-delay 0.0
                       auto-completion-minimum-prefix-length 1
                       ;; auto-completion-complete-with-key-sequence "fd"
+                      auto-completion-complete-with-key-sequence "jk"
                       )
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
