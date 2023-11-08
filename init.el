@@ -41,6 +41,8 @@ This function should only modify configuration layer settings."
      ;;
      ;; Layers added in alphabetic order
 
+     asciidoc
+
      ;; Add tool tips to show doc string of functions
      ;; Show snippets in the auto-completion popup
      ;; Show suggestions by most commonly used
@@ -114,6 +116,10 @@ This function should only modify configuration layer settings."
      helm
 
      html
+
+     ;; Java
+     (java :variables java-backend 'meghanada)
+
      javascript
      json
 
@@ -134,8 +140,6 @@ This function should only modify configuration layer settings."
           )
 
      markdown
-
-     asciidoc
 
      ;; Editing multiple lines of text concurrently
      ;; `g r' menu in Emacs normal state
