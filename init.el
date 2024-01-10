@@ -169,9 +169,13 @@ This function should only modify configuration layer settings."
           org-journal-time-format ""
           org-journal-carryover-items "TODO=\"TODO\"|TODO=\"DOING\"|TODO=\"BLOCKED\"|TODO=\"REVIEW\"")
 
+     (python :variables
+             python-backend 'anaconda)
+
      ;; Spacemacs Project Layer - projectile
      (spacemacs-project :variables
-              projectile-create-missing-test-files t)
+              projectile-create-missing-test-files t
+              projectile-project-search-path '("~/projects/"))
 
      ;; Text-based file manager with preview - SPC a t r r
      (ranger :variables
@@ -664,7 +668,9 @@ It should only modify the values of Spacemacs settings."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   ;; dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("ag" "rg" "pt" "ack" "grep")
+
 
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
