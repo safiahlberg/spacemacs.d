@@ -41,16 +41,19 @@ This function should only modify configuration layer settings."
      ;;
      ;; Layers added in alphabetic order
 
+     asciidoc
+
      ;; Add tool tips to show doc string of functions
      ;; Show snippets in the auto-completion popup
      ;; Show suggestions by most commonly used
      (auto-completion :variables
-                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-help-tooltip 'manual
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-idle-delay 0.0
                       auto-completion-minimum-prefix-length 1
                       ;; auto-completion-complete-with-key-sequence "fd"
+                      auto-completion-complete-with-key-sequence "jk"
                       )
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
@@ -113,6 +116,10 @@ This function should only modify configuration layer settings."
      helm
 
      html
+
+     ;; Java
+     (java :variables java-backend 'meghanada)
+
      javascript
      json
 
@@ -143,6 +150,15 @@ This function should only modify configuration layer settings."
           org-enable-github-support t
           org-enable-bootstrap-support t
           ;; org-enable-reveal-js-support t
+          org-enable-roam-support t
+          org-roam-directory "~/Documents/org-roam"
+          org-roam-dailies-directory "daily/"
+          org-roam-dailies-capture-templates
+          '(("d" "default" entry
+             "* %?"
+             :target (file+head "%<%Y-%m-%d>.org"
+                                "#+title: %<%Y-%m-%d>\n")))
+          org-roam-db-autosync-enable t
           org-want-todo-bindings t
           org-enable-org-journal-support t
           org-journal-dir "~/projects/journal/"
@@ -153,6 +169,13 @@ This function should only modify configuration layer settings."
           org-journal-time-format ""
           org-journal-carryover-items "TODO=\"TODO\"|TODO=\"DOING\"|TODO=\"BLOCKED\"|TODO=\"REVIEW\"")
 
+     (python :variables
+             python-backend 'anaconda)
+
+     ;; Spacemacs Project Layer - projectile
+     (spacemacs-project :variables
+              projectile-create-missing-test-files t
+              projectile-project-search-path '("~/projects/"))
 
      ;; Text-based file manager with preview - SPC a t r r
      (ranger :variables
@@ -412,8 +435,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(doom-gruvbox
-                         doom-gruvbox-light
+   dotspacemacs-themes '(doom-gruvbox-light
+                         doom-gruvbox
                          spacemacs-dark
                          spacemacs-light)
 
@@ -537,7 +560,8 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default t) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   ;; dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' to obtain fullscreen
@@ -644,7 +668,9 @@ It should only modify the values of Spacemacs settings."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   ;; dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("ag" "rg" "pt" "ack" "grep")
+
 
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
