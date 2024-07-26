@@ -17,6 +17,12 @@
 ;;
 ;; ---------------------------------------
 
+;; ---------------------------------------
+;; Evil escape
+(setq-default evil-escape-key-sequence "jk")
+;;
+;; ---------------------------------------
+
 ;; Set window size
 (setq resize-factor 0.45)
 (setq width-breakpoint 1440)
@@ -72,4 +78,3 @@
 ;; https://github.com/syl20bnr/spacemacs/issues/16276
 (remove-hook 'helm-mode-hook 'helm-descbinds-mode)
 ;; ---------------------------------------
-
