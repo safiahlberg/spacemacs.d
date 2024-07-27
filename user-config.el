@@ -23,7 +23,6 @@
 ;;
 ;; ---------------------------------------
 
-
 ;; Set window size
 (setq resize-factor 0.45)
 (setq width-breakpoint 1440)
