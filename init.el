@@ -41,6 +41,8 @@ This function should only modify configuration layer settings."
      ;;
      ;; Layers added in alphabetic order
 
+     ansible
+
      asciidoc
 
      ;; Add tool tips to show doc string of functions
