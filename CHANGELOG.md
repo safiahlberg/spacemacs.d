@@ -1,9 +1,14 @@
 # Changelog
 
 # Unreleased
+
+# 2025-10-25
 ## Changed
 - add syntax-checker layer to support `d s` & `c s` evil commands to delete or change surrounding parens
 - disable helm-discbinds to prevent it blocking which-key menu
+- config: update from spacemacs template
+- package: unpin evil-surround
+- theme: catppuccin mocha theme by default
 
 # 2023-09-08
 ## Changed
