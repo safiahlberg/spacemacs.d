@@ -26,10 +26,11 @@
 ;; Set window size
 (setq resize-factor 0.45)
 (setq width-breakpoint 1440)
-(setq pos-adjustment 0)
+(setq pos-adjustment 6)
+(setq height-adjustment 4)
 (when window-system
   (let ((frame (selected-frame))
-        (resized-height (- (/ (display-pixel-height) (frame-char-height)) 3))
+        (resized-height (- (/ (display-pixel-height) (frame-char-height)) height-adjustment))
         (resized-width (let ((resized-width (-  (/ (display-pixel-width) (frame-char-width)) pos-adjustment)))
                          (if (> (display-pixel-width) width-breakpoint)
                              (round (* resized-width resize-factor))
@@ -39,8 +40,17 @@
     (set-frame-position frame
                         (if (> (display-pixel-width) width-breakpoint)
                             (+ (- (display-pixel-width) (round (* (display-pixel-width) resize-factor))) pos-adjustment)
-                          0) 0))
+                          0)
+                        0))
   )
+
+;; ---------------------------------------
+;;
+;; Evil Safe Lisp Structural Editing
+;;
+;; https://www.spacemacs.org/layers/+lang/racket/README.html#structurally-safe-editing
+;; ---------------------------------------
+(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
 
 ;; ---------------------------------------
 ;;

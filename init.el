@@ -178,6 +178,12 @@ This function should only modify configuration layer settings."
      (spacemacs-project :variables
                         projectile-create-missing-test-files t
                         projectile-project-search-path '("~/projects/"))
+<<<<<<< Updated upstream
+=======
+
+     ;; Racket
+     racket
+>>>>>>> Stashed changes
 
      ;; Text-based file manager with preview - SPC a t r r
      (ranger :variables
@@ -433,6 +439,7 @@ It should only modify the values of Spacemacs settings."
                                :size 12.0
                                :weight normal
                                :width normal)
+   ;; dotspacemacs-default-font '("JetBrains Mono-12")
 
    ;; Default icons font, it can be `all-the-icons' or `nerd-icons'.
    dotspacemacs-default-icons-font 'all-the-icons
