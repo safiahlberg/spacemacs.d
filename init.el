@@ -405,9 +405,9 @@ It should only modify the values of Spacemacs settings."
    ;; package can be defined with `:package', or a theme can be defined with
    ;; `:location' to download the theme package, refer the themes section in
    ;; DOCUMENTATION.org for the full theme specifications.
-   dotspacemacs-themes '(catppuccin
+   dotspacemacs-themes '(doom-gruvbox-light
+                         catppuccin
                          doom-gruvbox
-                         doom-gruvbox-light
                          spacemacs-dark
                          spacemacs-light)
 
