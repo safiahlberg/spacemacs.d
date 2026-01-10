@@ -178,12 +178,9 @@ This function should only modify configuration layer settings."
      (spacemacs-project :variables
                         projectile-create-missing-test-files t
                         projectile-project-search-path '("~/projects/"))
-<<<<<<< Updated upstream
-=======
 
      ;; Racket
      racket
->>>>>>> Stashed changes
 
      ;; Text-based file manager with preview - SPC a t r r
      (ranger :variables
