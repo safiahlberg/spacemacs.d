@@ -24,7 +24,8 @@
 ;; ---------------------------------------
 
 ;; Set window size
-(setq resize-factor 0.45)
+(setq resize-factor-small 0.75)
+(setq resize-factor-big 0.50)
 (setq width-breakpoint 1440)
 (setq pos-adjustment 6)
 (setq height-adjustment 4)
@@ -33,13 +34,14 @@
         (resized-height (- (/ (display-pixel-height) (frame-char-height)) height-adjustment))
         (resized-width (let ((resized-width (-  (/ (display-pixel-width) (frame-char-width)) pos-adjustment)))
                          (if (> (display-pixel-width) width-breakpoint)
-                             (round (* resized-width resize-factor))
-                           resized-width))))
+                             (round (* resized-width resize-factor-big))
+                           (round (* resized-width resize-factor-small))
+                           ))))
     (set-frame-height frame resized-height)
     (set-frame-width frame resized-width)
     (set-frame-position frame
                         (if (> (display-pixel-width) width-breakpoint)
-                            (+ (- (display-pixel-width) (round (* (display-pixel-width) resize-factor))) pos-adjustment)
+                            (+ (- (display-pixel-width) (round (* (display-pixel-width) resize-factor-big))) pos-adjustment)
                           0)
                         0))
   )
