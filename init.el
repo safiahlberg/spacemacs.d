@@ -54,13 +54,21 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-sort-by-usage t
                       auto-completion-idle-delay 0.0
                       auto-completion-minimum-prefix-length 1
-                      ;; auto-completion-complete-with-key-sequence "fd"
-                      auto-completion-complete-with-key-sequence "jk"
+                      auto-completion-complete-with-key-sequence "fd"
+                      ;; auto-completion-complete-with-key-sequence "jk"
                       )
+
+     ;; Claude Code
+     ;; https://www.spacemacs.org/layers/+tools/claude-code/README.html
+     (claude-code :variables
+                  claude-code-ide-use-side-window t
+                  claude-code-ide-window-side 'right
+                  claude-code-ide-window-width 80)
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      (clojure :variables
               ;; clojure-backend 'cider                 ; use cider and disable lsp
+              clojure-enable-linters '(clj-kondo joker)         ; enable clj-kondo
               clojure-enable-kaocha-runner t            ; enable Kaocha test runner
               cider-repl-display-help-banner nil        ; disable help banner
               cider-print-fn 'puget                     ; pretty printing with sorted keys / set values
@@ -170,6 +178,13 @@ This function should only modify configuration layer settings."
           org-journal-time-prefix "* "
           org-journal-time-format ""
           org-journal-carryover-items "TODO=\"TODO\"|TODO=\"DOING\"|TODO=\"BLOCKED\"|TODO=\"REVIEW\"")
+
+     ;;PlantUML
+     ;; https://www.spacemacs.org/layers/+lang/plantuml/README.html
+     (plantuml :variables
+               plantuml-jar-path "~/bin/installation/plantUml.jar"
+               org-plantuml-jar-path "~/bin/installation/plantUml.jar"
+               plantuml-default-exec-mode 'library)
 
      (python :variables
              python-backend 'anaconda)
