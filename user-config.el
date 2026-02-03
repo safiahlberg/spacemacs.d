@@ -24,8 +24,8 @@
 ;; ---------------------------------------
 
 ;; Set window size
-(setq resize-factor-small 0.75)
-(setq resize-factor-big 0.50)
+(setq resize-factor-small 1)
+(setq resize-factor-big 0.80)
 (setq width-breakpoint 1440)
 (setq pos-adjustment 6)
 (setq height-adjustment 4)
