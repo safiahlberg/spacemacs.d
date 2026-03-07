@@ -54,7 +54,7 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-sort-by-usage t
                       auto-completion-idle-delay 0.0
                       auto-completion-minimum-prefix-length 1
-                      auto-completion-complete-with-key-sequence "fd"
+                      ;;auto-completion-complete-with-key-sequence "fd"
                       ;; auto-completion-complete-with-key-sequence "jk"
                       )
 

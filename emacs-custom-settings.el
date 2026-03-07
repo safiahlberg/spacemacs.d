@@ -5,6 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(package-selected-packages nil)
+ '(safe-local-variable-values
+   '((plantuml-indent-level . 2) (javascript-backend . tide)
+     (javascript-backend . tern) (javascript-backend . lsp)))
  '(warning-suppress-types '((use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
