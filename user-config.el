@@ -24,8 +24,8 @@
 ;; ---------------------------------------
 
 ;; Set window size
-(setq resize-factor-small 1)
-(setq resize-factor-big 0.80)
+(setq resize-factor-small 0.90)
+(setq resize-factor-big 0.50)
 (setq width-breakpoint 1440)
 (setq pos-adjustment 6)
 (setq height-adjustment 4)
@@ -89,4 +89,18 @@
 ;; Remove helm-discbinds-mode from helm mode hook to avoid activating
 ;; https://github.com/syl20bnr/spacemacs/issues/16276
 (remove-hook 'helm-mode-hook 'helm-descbinds-mode)
+;; ---------------------------------------
+
+;; ---------------------------------------
+;; Clojure format on save
+;; Format buffer on save using CIDER (only when REPL is connected)
+(defun my/cider-format-buffer-if-connected ()
+  "Format buffer with CIDER if a REPL is connected."
+  (when (and (bound-and-true-p cider-mode)
+             (cider-connected-p))
+    (cider-format-buffer)))
+
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook #'my/cider-format-buffer-if-connected nil 'local)))
 ;; ---------------------------------------
