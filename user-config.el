@@ -104,3 +104,19 @@
           (lambda ()
             (add-hook 'before-save-hook #'my/cider-format-buffer-if-connected nil 'local)))
 ;; ---------------------------------------
+
+
+;; ---------------------------------------
+;; Trying to cure jump to Lisp mode
+;;
+(with-eval-after-load 'smartparens
+  (defun my/sp-return-to-normal (&rest _)
+    (when (and (bound-and-true-p evil-local-mode)
+               (not (evil-normal-state-p)))
+      (evil-normal-state)))
+
+  (advice-add 'sp-forward-slurp-sexp  :after #'my/sp-return-to-normal)
+  (advice-add 'sp-backward-slurp-sexp :after #'my/sp-return-to-normal)
+  (advice-add 'sp-forward-barf-sexp   :after #'my/sp-return-to-normal)
+  (advice-add 'sp-backward-barf-sexp  :after #'my/sp-return-to-normal))
+;; ---------------------------------------
