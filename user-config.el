@@ -120,3 +120,13 @@
   (advice-add 'sp-forward-barf-sexp   :after #'my/sp-return-to-normal)
   (advice-add 'sp-backward-barf-sexp  :after #'my/sp-return-to-normal))
 ;; ---------------------------------------
+
+;; Add this to enable Claude
+(setenv "PATH" (concat (getenv "PATH") ":/home/safi/.local/bin"))
+(add-to-list 'exec-path "/home/safi/.local/bin")
+
+;; in dotspacemacs/user-config
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+;; For non-windowed / daemon mode too:
+(exec-path-from-shell-initialize)
