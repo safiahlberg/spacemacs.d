@@ -19,7 +19,7 @@
 
 ;; ---------------------------------------
 ;; Evil escape
-;; (setq-default evil-escape-key-sequence "jk")
+(setq-default evil-escape-key-sequence "jk")
 ;;
 ;; ---------------------------------------
 
